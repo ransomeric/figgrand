@@ -1,0 +1,303 @@
+<%- include('header', { user: data.user, notifications: data.user.notifications }) -%>
+    <!-- content @s -->
+    <div class="nk-content nk-content-fluid">
+        <div class="container-xl wide-xl">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="nk-block-head nk-block-head-sm">
+                        <div class="nk-block-between">
+                            <div class="nk-block-head-content">
+                                <h3 class="nk-block-title page-title">Admin Dashboard</h3>
+                                <div class="nk-block-des text-soft">
+                                    <p>Welcome <%= data.user.username %>.</p>
+                                </div>
+                            </div><!-- .nk-block-head-content -->
+                            <!-- <div class="nk-block-head-content">
+                                <div class="toggle-wrap nk-block-tools-toggle">
+                                    <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1"
+                                        data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
+                                    <div class="toggle-expand-content" data-content="pageMenu">
+                                        <ul class="nk-block-tools g-3">
+                                            <li><a href="#" class="btn btn-white btn-dim btn-outline-primary"><em
+                                                        class="icon ni ni-download-cloud"></em><span>Export</span></a>
+                                            </li>
+                                            <li><a href="#" class="btn btn-white btn-dim btn-outline-primary"><em
+                                                        class="icon ni ni-reports"></em><span>Reports</span></a></li>
+                                            <li class="nk-block-tools-opt">
+                                                <div class="drodown">
+                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-primary"
+                                                        data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li><a href="#"><em
+                                                                        class="icon ni ni-user-add-fill"></em><span>Add
+                                                                        User</span></a></li>
+                                                            <li><a href="#"><em
+                                                                        class="icon ni ni-coin-alt-fill"></em><span>Add
+                                                                        Order</span></a></li>
+                                                            <li><a href="#"><em
+                                                                        class="icon ni ni-note-add-fill-c"></em><span>Add
+                                                                        Page</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div><!-- .nk-block-between -->
+                    </div><!-- .nk-block-head -->
+                    <div class="nk-block">
+                        <div class="row g-gs">
+                            <div class="col-md-4">
+                                <div class="card card-bordered card-full">
+                                    <div class="card-inner">
+                                        <div class="card-title-group align-start mb-0">
+                                            <div class="card-title">
+                                                <h6 class="subtitle">Total Deposit</h6>
+                                            </div>
+                                            <div class="card-tools">
+                                                <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip"
+                                                    data-bs-placement="left" title="Total Deposited"></em>
+                                            </div>
+                                        </div>
+                                        <div class="card-amount">
+                                            <span class="amount">
+                                                <%= total_deposit %> <span class="currency currency-usd">BTC</span>
+                                            </span>
+
+                                        </div>
+                                        <!-- <div class="invest-data">
+                                            <div class="invest-data-amount g-2">
+                                                <div class="invest-data-history">
+                                                    <div class="title">This Month</div>
+                                                    <div class="amount">2,940.59 <span
+                                                            class="currency currency-usd">USD</span></div>
+                                                </div>
+                                                <div class="invest-data-history">
+                                                    <div class="title">This Week</div>
+                                                    <div class="amount">1,259.28 <span
+                                                            class="currency currency-usd">USD</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="invest-data-ck">
+                                                <canvas class="iv-data-chart" id="totalDeposit"></canvas>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div><!-- .card -->
+                            </div><!-- .col -->
+                            <div class="col-md-4">
+                                <div class="card card-bordered card-full">
+                                    <div class="card-inner">
+                                        <div class="card-title-group align-start mb-0">
+                                            <div class="card-title">
+                                                <h6 class="subtitle">Total Investment</h6>
+                                            </div>
+                                            <div class="card-tools">
+                                                <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip"
+                                                    data-bs-placement="left" title="Total Invested"></em>
+                                            </div>
+                                        </div>
+                                        <div class="card-amount">
+                                            <span class="amount">
+                                                <%= total_invested %> <span class="currency currency-usd">BTC</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div><!-- .card -->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-bordered card-full">
+                                    <div class="card-inner">
+                                        <div class="card-title-group align-start mb-0">
+                                            <div class="card-title">
+                                                <h6 class="subtitle">Total Withdrawal</h6>
+                                            </div>
+                                            <div class="card-tools">
+                                                <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip"
+                                                    data-bs-placement="left" title="Total Withdrawn"></em>
+                                            </div>
+                                        </div>
+                                        <div class="card-amount">
+                                            <span class="amount">
+                                                <%= total_withdrawn %> <span class="currency currency-usd">BTC</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div><!-- .card -->
+                            </div>
+                            <div class="col-xl-12 col-xxl-8">
+                                <div class="card card-bordered card-full">
+                                    <div class="card-inner border-bottom">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title">Pending Transactions</h6>
+                                            </div>
+                                            <!-- <div class="card-tools">
+                                                <a href="#" class="link">View All</a>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="nk-tb-list">
+                                        <div class="nk-tb-item nk-tb-head">
+                                            <div class="nk-tb-col"><span>Description</span></div>
+                                            <div class="nk-tb-col tb-col-sm"><span>Email</span></div>
+                                            <div class="nk-tb-col tb-col-sm"><span>Who</span></div>
+                                            <div class="nk-tb-col tb-col-lg"><span>Date</span></div>
+                                            <div class="nk-tb-col"><span>Amount</span></div>
+                                            <div class="nk-tb-col tb-col-sm"><span>&nbsp;</span></div>
+                                            <div class="nk-tb-col"><span>&nbsp;</span></div>
+                                        </div>
+                                        <% for (let item of pending_transactions) { %>
+                                            <div class="nk-tb-item">
+                                                <div class="nk-tb-col">
+                                                    <div class="align-center">
+                                                        <div class="user-avatar user-avatar-sm <%= (item.type === "withdrawal"? "bg-orange-dim" : item.type === "deposit" ? "bg-teal-dim": "bg-azure-dim") %>">
+                                                            <span>
+                                                                <%= item.type[0].toUpperCase() %>
+                                                            </span>
+                                                        </div>
+                                                        <span class="tb-sub ms-2">New <%= item.type %> request </span>
+                                                    </div>
+                                                </div>
+                                                <div class="nk-tb-col tb-col-lg">
+                                                    <span class="tb-sub">
+                                                        <%= item.created_by.email %>
+                                                    </span>
+                                                </div>
+                                                <div class="nk-tb-col tb-col-sm">
+                                                    <div class="user-card">
+                                                        <div class="user-name">
+                                                            <span class="tb-lead">
+                                                                <%= item.created_by.firstname + " " +
+                                                                    item.created_by.lastname %>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nk-tb-col tb-col-lg">
+                                                    <span class="tb-sub">
+                                                        <%= new Date(item.date_created).toDateString() %>
+                                                    </span>
+                                                </div>
+                                                <div class="nk-tb-col">
+                                                    <span class="tb-sub tb-amount">
+                                                        <%= item.amount %> <span>BTC</span>
+                                                    </span>
+                                                </div>
+                                                <div class="nk-tb-col tb-col-sm">
+                                                    <span class="tb-sub text-warning">
+                                                        <%= item.status %>
+                                                    </span>
+                                                </div>
+                                                <div class="nk-tb-col nk-tb-col-action">
+                                                    <div class="dropdown">
+                                                        <a class="text-soft dropdown-toggle btn btn-sm btn-icon btn-trigger"
+                                                            data-bs-toggle="dropdown"><em
+                                                                class="icon ni ni-chevron-right"></em></a>
+                                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                            <ul class="link-list-plain">
+                                                                <li><a href="#" data-trans_type = "approve" data-trans_id = <%= item._id %> name="adminApproveBtn">Approve</a></li>
+                                                                <li><a href="#" data-trans_type = "reject" data-trans_id = <%= item._id %> name="adminRejectBtn">Reject</a></li>
+                                                                <li><a href="#" data-trans_type = "pend" data-trans_id = <%= item._id %> name="adminPendBtn">Pend</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                      </div>
+                                </div><!-- .card -->
+                            </div><!-- .col -->
+
+                            <div class="col-xl-12 col-xxl-8">
+                                <div class="card card-bordered card-full">
+                                    <div class="card-inner border-bottom">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title">Other Transactions</h6>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="nk-tb-list">
+                                        <div class="nk-tb-item nk-tb-head">
+                                            <div class="nk-tb-col"><span>Description</span></div>
+                                            <div class="nk-tb-col tb-col-sm"><span>Email</span></div>
+                                            <div class="nk-tb-col tb-col-sm"><span>Who</span></div>
+                                            <div class="nk-tb-col tb-col-lg"><span>Date</span></div>
+                                            <div class="nk-tb-col"><span>Amount</span></div>
+                                            <div class="nk-tb-col tb-col-sm"><span>&nbsp;</span></div>
+                                            <div class="nk-tb-col"><span>&nbsp;</span></div>
+                                        </div>
+                                        <% for (let item of other_transactions) { %>
+                                            <div class="nk-tb-item">
+                                                <div class="nk-tb-col">
+                                                    <div class="align-center">
+                                                        <div class="user-avatar user-avatar-sm <%= (item.type === "withdrawal"? "bg-orange-dim" : item.type === "deposit" ? "bg-teal-dim": "bg-azure-dim") %>">
+                                                            <span>
+                                                                <%= item.type[0].toUpperCase() %>
+                                                            </span>
+                                                        </div>
+                                                        <span class="tb-sub ms-2">New <%= item.type %> request </span>
+                                                    </div>
+                                                </div>
+                                                <div class="nk-tb-col tb-col-lg">
+                                                    <span class="tb-sub">
+                                                        <%= item.created_by.email %>
+                                                    </span>
+                                                </div>
+                                                <div class="nk-tb-col tb-col-sm">
+                                                    <div class="user-card">
+                                                        <div class="user-name">
+                                                            <span class="tb-lead">
+                                                                <%= item.created_by.firstname + " " +
+                                                                    item.created_by.lastname %>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nk-tb-col tb-col-lg">
+                                                    <span class="tb-sub">
+                                                        <%= new Date(item.date_created).toDateString() %>
+                                                    </span>
+                                                </div>
+                                                <div class="nk-tb-col">
+                                                    <span class="tb-sub tb-amount">
+                                                        <%= item.amount %> <span>BTC</span>
+                                                    </span>
+                                                </div>
+                                                <div class="nk-tb-col tb-col-sm">
+                                                    <span class="tb-sub <%= item.status === "approved"? "text-success" : "text-danger" %>">
+                                                        <%= item.status %>
+                                                    </span>
+                                                </div>
+                                                <div class="nk-tb-col nk-tb-col-action">
+                                                    <div class="dropdown">
+                                                        <a class="text-soft dropdown-toggle btn btn-sm btn-icon btn-trigger"
+                                                            data-bs-toggle="dropdown"><em
+                                                                class="icon ni ni-chevron-right"></em></a>
+                                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                            <ul class="link-list-plain">
+                                                                <li><a href="#" data-trans_type = "approve" data-trans_id = <%= item._id %> name="adminApproveBtn">Approve</a></li>
+                                                                <li><a href="#" data-trans_type = "reject" data-trans_id = <%= item._id %> name="adminRejectBtn">Reject</a></li>
+                                                                <li><a href="#" data-trans_type = "pend" data-trans_id = <%= item._id %> name="adminPendBtn">Pend</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                               </div>
+                                </div><!-- .card -->
+                            </div><!-- .col -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content @e -->
+    <%- include('footer', {website: data.website}) -%>
