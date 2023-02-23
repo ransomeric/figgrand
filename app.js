@@ -66,9 +66,9 @@ var website_url = user_board_url = server_base_url = isProd
     redisClient = redis.createClient({
         /*url: "redis://localhost:6379",*/
         legacyMode: true,
-        password: '',
+        password: 'zIEusbGtKZdpKVBD8IkHOf5ltUhuvN0p',
         socket: {
-            host: '',
+            host: 'redis-14926.c100.us-east-1-4.ec2.cloud.redislabs.com',
             port: 14926
         }
     })
